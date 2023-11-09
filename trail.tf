@@ -1,7 +1,7 @@
 resource "aws_cloudtrail" "trail" {
   name                          = local.trail_name
   s3_bucket_name                = aws_s3_bucket.log_bucket.id
-  s3_key_prefix                 = "all-logs"
+  s3_key_prefix                 = local.s3_logs_prefix
   include_global_service_events = true
   is_multi_region_trail         = true
 

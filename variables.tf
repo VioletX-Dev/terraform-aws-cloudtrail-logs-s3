@@ -4,5 +4,6 @@ variable "company" {
 }
 
 locals {
-  trail_name = lower("${var.company}-cloudtrail-full-watcher")
+  trail_name     = lower("${var.company}-cloudtrail-full-watcher")
+  s3_logs_prefix = "all-logs"
 }

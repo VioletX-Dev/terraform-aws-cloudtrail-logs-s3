@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "log_bucket" {
     }
 
     actions   = ["s3:PutObject"]
-    resources = ["${aws_s3_bucket.log_bucket.arn}/full/AWSLogs/${data.aws_caller_identity.current.account_id}/*"]
+    resources = ["${aws_s3_bucket.log_bucket.arn}/${local.s3_logs_prefix}/AWSLogs/${data.aws_caller_identity.current.account_id}/*"]
 
     condition {
       test     = "StringEquals"
