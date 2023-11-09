@@ -3,6 +3,7 @@ resource "aws_cloudtrail" "trail" {
   s3_bucket_name                = aws_s3_bucket.log_bucket.id
   s3_key_prefix                 = "all-logs"
   include_global_service_events = true
+  is_multi_region_trail         = true
 
   event_selector {
     read_write_type           = "All"

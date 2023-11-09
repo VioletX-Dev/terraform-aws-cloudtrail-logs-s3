@@ -4,5 +4,5 @@ variable "company" {
 }
 
 locals {
-  trail_name = lower("${var.company}-full-trail")
+  trail_name = lower("${var.company}-cloudtrail-full-watcher")
 }
