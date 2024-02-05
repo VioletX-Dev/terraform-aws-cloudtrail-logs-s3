@@ -28,4 +28,9 @@ resource "aws_cloudtrail" "trail" {
     developed = "VioletX.com"
     terraform = "true"
   }
+
+  depends_on = [
+    aws_s3_bucket.log_bucket,
+    aws_s3_bucket_policy.log_bucket
+  ]
 }
