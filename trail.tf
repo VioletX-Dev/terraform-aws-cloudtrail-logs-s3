@@ -4,6 +4,7 @@ resource "aws_cloudtrail" "trail" {
   s3_key_prefix                 = local.s3_logs_prefix
   include_global_service_events = true
   is_multi_region_trail         = true
+  enable_log_file_validation    = true
 
   event_selector {
     read_write_type           = "All"
